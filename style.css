@@ -43,11 +43,17 @@
 
 .cont_icons i {
     font-size: 20px;
-    margin: auto 10px;
+    margin: auto 5px;
 }
 
 i {
     color: #b0b0b0;
+    padding: 10px;
+}
+
+i:hover {
+    color: #000;
+    cursor: pointer;
 }
 
 /*Body*/
@@ -93,20 +99,28 @@ aside .head {
     border-right: 2px solid #d8d8d8 ;
 }
 
+.navbar {
+    display: flex;
+    flex-direction: column;
+}
+
 .notifications {
     width: 100%;
     height: 85px;
     background-color: #8edafd;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .navbar .cont_left .cont_icons i {
     background-color: #fff;
-    padding: 10px;
+    padding: 20px;
     border-radius: 50%;
     color: #8edafd;
+}
+
+.navbar .cont_left .cont_icons i:hover {
+    color: blue;
 }
 
 .navbar .cont_right {
@@ -157,6 +171,14 @@ input {
 
 .foot_text i {
     color:#6a7376
+}
+
+.foot_text i:hover {
+    color: #000;
+}
+
+.foot_text .red :hover {
+    color: rgb(255, 0, 0);
 }
 
 .foot_text .write_text {
