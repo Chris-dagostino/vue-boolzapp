@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+
+    <div class="head_green" >
+
+    </div>
+
     <div id="app" >
 
-        <div class="head_green" >
-    
-        </div>
     
         <main class="container" >
     
@@ -48,7 +50,7 @@
                         </div>
                         <div class="cont_right" >
                             <h4>Ricevi notifiche di nuovi messaggi</h4>
-                            <a class="grey" href="http://">Attiva notifiche desktop</a>
+                            <a class="grey hover_blue" href="http://">Attiva notifiche desktop</a>
                         </div>
     
                     </div>
@@ -63,7 +65,7 @@
     
                 <!--contatti-->
                 <div class="container-contact" >
-                    <div class="contact" v-for="contact in contacts" >
+                    <div class="contact" @click="change(contacts)" v-for="contact in contacts" >
                         <div class="account" id="contact-img" >
                             <img :src='`./img/avatar${contact.avatar}.jpg`'>
                         </div>
@@ -78,8 +80,10 @@
     
             <!--fine aside-->
     
-            <!--container messaggi-->
+            <!--main-->
             <div class="mex">
+
+                <!--users-->
                 <div class="head" >
                     <div class="cont_left" >
                         <div class="account" >
@@ -87,7 +91,7 @@
                         </div>
                         <div class="info" >
                             <h4>Michele</h4>
-                            <span class="grey" >Ultimo accesso alle ...</span>
+                            <span class="grey" >Ultimo accesso alle ...</span> 
                             <span class="grey" >orario</span>
                         </div>
                     </div>
@@ -103,10 +107,24 @@
                         </div>                
                     </div>
                 </div>
-                <div class="main_text" >
-                    
-    
+                <!--users-->
+
+
+
+                <!--conversation-->
+                <div class="main_text">
+                    <div class="conversation" v-for="conversation in contacts[Active].messages" >
+                        <div>{{conversation.text}}</div>
+                    </div>
                 </div>
+                <!--fine conversation-->
+
+
+
+
+
+
+                <!--write text-->
                 <div class="foot_text" >
                     <div class="cont_icons" >
                         <i class="fa-regular fa-face-smile"></i>
@@ -117,10 +135,10 @@
                     <div class="cont_icons red" >
                         <i class="fa-solid fa-microphone"></i>
                     </div>
-    
                 </div>
+                <!--fine write text-->
             </div>
-            <!--fine container messaggi-->
+            <!--fine main-->
     
         </main>
     </div>

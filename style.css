@@ -97,6 +97,7 @@ aside {
     min-width: 350px;
     background-color: #ffffff;
     border-right: 2px solid #d8d8d8;
+    overflow: hidden
 }
 
 aside .head {
@@ -123,7 +124,7 @@ aside .head {
     color: #8edafd;
 }
 
-.navbar .cont_left .cont_icons i:hover {
+.navbar .cont_left .cont_icons i:hover, .hover_blue:hover {
     color: blue;
 }
 
@@ -147,6 +148,7 @@ input {
 }
 
 .container-contact{
+    overflow: auto;
 }
 
 .contact{

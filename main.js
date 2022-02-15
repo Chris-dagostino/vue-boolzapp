@@ -85,11 +85,13 @@ const app = new Vue ({
                 }
             ],
             },
-            ]
+            ],
+        Active: 0,
+            
     },
     methods:{
-        function(change){
-            
+        change (){
+            this.Active == this.contacts         
         }
 
     }
