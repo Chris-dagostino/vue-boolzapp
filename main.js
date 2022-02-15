@@ -1,5 +1,5 @@
 const app = new Vue ({
-    el:'#app'
+    el:'#app',
     data:{
         contacts: [
             {
@@ -86,8 +86,11 @@ const app = new Vue ({
             ],
             },
             ]
-    };
+    },
     methods:{
+        function(change){
+            
+        }
 
     }
 });
