@@ -99,6 +99,7 @@ const app = new Vue ({
 
 
         sendMessage (){
+            // invio nuovo messaggio
             let messageObj = {
                 date: '10/01/2020 15:50:00',
                 text: this.newMessage,
@@ -106,7 +107,18 @@ const app = new Vue ({
             };
 
             this.contacts[this.active].messages.push(messageObj);
-            this.newMessage = '';
+            this.newMessage='';
+
+            // risposta 
+            let reply = {
+                date: '10/01/2020 15:50:00',
+                text: 'va bene',
+                status: 'received'
+            };
+
+            setTimeout (() => {
+                this.contacts[this.active].messages.push(reply)
+            }, 1000);
         }
     }
 });

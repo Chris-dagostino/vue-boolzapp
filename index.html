@@ -112,8 +112,8 @@
 
 
                 <!--conversation-->
-                <div class="main_text">
-                    <div class="conversation" v-for="conversation in contacts[active].messages">
+                <div class="cont-messages" >
+                    <div class="conversation" v-for="conversation in contacts[active].messages" :class="conversation.status" >
                         <div>{{conversation.text}}</div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div class="write_text" >
-                        <input type="text" @keyup.enter="sendMessage" placeholder="Scrivi un messaggio..." >
+                        <input type="text" @keyup.enter="sendMessage" v-model="newMessage" placeholder="Scrivi un messaggio..." >
                     </div>
                     <div class="cont_icons red" >
                         <i class="fa-solid fa-microphone"></i>
