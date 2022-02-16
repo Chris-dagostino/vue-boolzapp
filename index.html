@@ -65,13 +65,13 @@
     
                 <!--contatti-->
                 <div class="container-contact" >
-                    <div class="contact" @click="change(contacts)" v-for="contact in contacts" >
+                    <div class="contact" @click="change(index)" v-for="(contact, index) in contacts" >
                         <div class="account" id="contact-img" >
                             <img :src='`./img/avatar${contact.avatar}.jpg`'>
                         </div>
                         <div class="contact-info" >
                             <h3>{{contact.name}}</h3>
-                            <span class="grey" >ciao ciao...</span>
+                            <span class="grey" >{{contacts.messages}}</span>
                         </div>             
                     </div>
                 </div>
@@ -87,10 +87,10 @@
                 <div class="head" >
                     <div class="cont_left" >
                         <div class="account" >
-                            <img src="img/avatar_1.jpg" alt="">
+                            <img :src="`./img/avatar${contacts[active].avatar}.jpg`" alt="">
                         </div>
                         <div class="info" >
-                            <h4>Michele</h4>
+                            <h4>{{contacts[active].name}}</h4>
                             <span class="grey" >Ultimo accesso alle ...</span> 
                             <span class="grey" >orario</span>
                         </div>
@@ -113,7 +113,7 @@
 
                 <!--conversation-->
                 <div class="main_text">
-                    <div class="conversation" v-for="conversation in contacts[Active].messages" >
+                    <div class="conversation" v-for="conversation in contacts[active].messages">
                         <div>{{conversation.text}}</div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div class="write_text" >
-                        <input type="text" placeholder="Scrivi un messaggio" >
+                        <input type="text" @keyup.enter="sendMessage" placeholder="Scrivi un messaggio..." >
                     </div>
                     <div class="cont_icons red" >
                         <i class="fa-solid fa-microphone"></i>

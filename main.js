@@ -86,13 +86,26 @@ const app = new Vue ({
             ],
             },
             ],
-        Active: 0,
+            
+        active: 0,
+        newMessage:'',
+        
             
     },
     methods:{
-        change (){
-            this.Active == this.contacts         
-        }
+        change (index){
+            this.Active = index;       
+        },
 
+        sendMessage (){
+            let messageObj = {
+                date: '10/01/2020 15:50:00',
+                text: this.newMessage,
+                status: 'sent'
+            };
+
+            this.contacts[this.active].messages.push(messageObj);
+            this.newMessage = '';
+        }
     }
 });
