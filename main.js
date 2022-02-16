@@ -94,8 +94,9 @@ const app = new Vue ({
     },
     methods:{
         change (index){
-            this.Active = index;       
+            this.active = index;       
         },
+
 
         sendMessage (){
             let messageObj = {
@@ -109,3 +110,6 @@ const app = new Vue ({
         }
     }
 });
+
+
+

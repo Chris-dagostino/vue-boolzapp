@@ -65,13 +65,13 @@
     
                 <!--contatti-->
                 <div class="container-contact" >
-                    <div class="contact" @click="change(index)" v-for="(contact, index) in contacts" >
+                    <div class="contact" v-for="(contact, index) in contacts" @click="change(index)" >
                         <div class="account" id="contact-img" >
                             <img :src='`./img/avatar${contact.avatar}.jpg`'>
                         </div>
                         <div class="contact-info" >
                             <h3>{{contact.name}}</h3>
-                            <span class="grey" >{{contacts.messages}}</span>
+                            <span class="grey" >{{}}</span>
                         </div>             
                     </div>
                 </div>
