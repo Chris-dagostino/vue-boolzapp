@@ -88,15 +88,14 @@ const app = new Vue ({
             ],
             
         active: 0,
-        newMessage:'',
-        
-            
+        newMessage:'',    
     },
+
+
     methods:{
         change (index){
             this.active = index;       
         },
-
 
         sendMessage (){
             // invio nuovo messaggio
@@ -120,6 +119,10 @@ const app = new Vue ({
                 this.contacts[this.active].messages.push(reply)
             }, 1000);
         }
+
+        // ricerca/selezione del contatto
+        
+
     }
 });
 
