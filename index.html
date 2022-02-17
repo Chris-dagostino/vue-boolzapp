@@ -58,20 +58,20 @@
                         <div class="cont_icons" >
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>                 
-                        <input type="text" placeholder="Cerca o inizia una nuova chat" >
+                        <input type="text" v-model="searchContact" @keyup="search" placeholder="Cerca o inizia una nuova chat" >
                     </div>
                 </div>
     
     
                 <!--contatti-->
                 <div class="container-contact" >
-                    <div class="contact" v-for="(contact, index) in contacts" @click="change(index)" >
+                    <div class="contact" v-show="contact.visible == true" v-for="(contact, index) in contacts" @click="change(index)" >
                         <div class="account" id="contact-img" >
                             <img :src='`./img/avatar${contact.avatar}.jpg`'>
                         </div>
                         <div class="contact-info" >
                             <h3>{{contact.name}}</h3>
-                            <span class="grey" >{{}}</span>
+                            <span class="grey" >ciao...</span>
                         </div>             
                     </div>
                 </div>

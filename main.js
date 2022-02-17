@@ -88,7 +88,8 @@ const app = new Vue ({
             ],
             
         active: 0,
-        newMessage:'',    
+        newMessage:'',  
+        searchContact:'',
     },
 
 
@@ -118,11 +119,19 @@ const app = new Vue ({
             setTimeout (() => {
                 this.contacts[this.active].messages.push(reply)
             }, 1000);
-        }
+        },
 
         // ricerca/selezione del contatto
         
-
+        search () {
+            this.contacts.forEach((element) => {
+                if (element.name.toLowerCase().includes(this.searchContact.toLowerCase())){
+                    element.visible = true;
+                }else {
+                    element.visible = false;
+                }
+            });
+        }
     }
 });
 
